@@ -1,0 +1,783 @@
+.modal-open{
+    overflow: hidden;
+    height: 100%;
+}
+
+#contentWrapper {display:unset;}
+
+/***
+* Reset CSS
+*/
+#bannierecookieRoot div, #bannierecookieRoot span, #bannierecookieRoot applet, #bannierecookieRoot object, #bannierecookieRoot iframe, #bannierecookieRoot h1, #bannierecookieRoot h2, #bannierecookieRoot h3, #bannierecookieRoot h4, #bannierecookieRoot h5, #bannierecookieRoot h6, #bannierecookieRoot p, #bannierecookieRoot blockquote, #bannierecookieRoot pre, #bannierecookieRoot a, #bannierecookieRoot abbr, #bannierecookieRoot acronym, #bannierecookieRoot address, #bannierecookieRoot big, #bannierecookieRoot cite, #bannierecookieRoot code, #bannierecookieRoot del, #bannierecookieRoot dfn, #bannierecookieRoot em, #bannierecookieRoot img, #bannierecookieRoot ins, #bannierecookieRoot kbd, #bannierecookieRoot q, #bannierecookieRoot s, #bannierecookieRoot samp, #bannierecookieRoot small, #bannierecookieRoot strike, #bannierecookieRoot strong, #bannierecookieRoot sub, #bannierecookieRoot sup, #bannierecookieRoot tt, #bannierecookieRoot var, #bannierecookieRoot b, #bannierecookieRoot u, #bannierecookieRoot i, #bannierecookieRoot center, #bannierecookieRoot dl, #bannierecookieRoot dt, #bannierecookieRoot dd, #bannierecookieRoot ol, #bannierecookieRoot ul, #bannierecookieRoot li, #bannierecookieRoot fieldset, #bannierecookieRoot form, #bannierecookieRoot label, #bannierecookieRoot legend, #bannierecookieRoot table, #bannierecookieRoot caption, #bannierecookieRoot tbody, #bannierecookieRoot tfoot, #bannierecookieRoot thead, #bannierecookieRoot tr, #bannierecookieRoot th, #bannierecookieRoot td, #bannierecookieRoot article, #bannierecookieRoot aside, #bannierecookieRoot canvas, #bannierecookieRoot details, #bannierecookieRoot embed, #bannierecookieRoot figure, #bannierecookieRoot figcaption, #bannierecookieRoot footer, #bannierecookieRoot header, #bannierecookieRoot hgroup, #bannierecookieRoot menu, #bannierecookieRoot nav, #bannierecookieRoot output, #bannierecookieRoot ruby, #bannierecookieRoot section, #bannierecookieRoot summary, #bannierecookieRoot time, #bannierecookieRoot mark, #bannierecookieRoot audio, #bannierecookieRoot video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    /*background: initial;*/
+    text-align: initial;
+    text-shadow: initial;
+}
+/* HTML5 display-role reset for older browsers */
+#bannierecookieRoot article, #bannierecookieRoot aside, #bannierecookieRoot details, #bannierecookieRoot figcaption, #bannierecookieRoot figure, #bannierecookieRoot footer, #bannierecookieRoot header, #bannierecookieRoot hgroup, #bannierecookieRoot menu, #bannierecookieRoot nav, #bannierecookieRoot section {
+    display: block;
+}
+#bannierecookieRoot ol, #bannierecookieRoot ul {
+    list-style: none;
+}
+#bannierecookieRoot blockquote, #bannierecookieRoot q {
+    quotes: none;
+}
+#bannierecookieRoot blockquote:before, #bannierecookieRoot blockquote:after, #bannierecookieRoot q:before, #bannierecookieRoot q:after {
+    content: '';
+    content: none;
+}
+#bannierecookieRoot table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#bannierecookieRoot a:focus, #bannierecookieRoot button:focus {
+    /*outline: 2px solid #cb3333;*/
+}
+
+/***
+ * Better scroll management
+ */
+div#bannierecookieMainLineOffset {
+    margin-top: 0!important;
+}
+
+div#bannierecookieServices {
+    margin-top: 21px!important;
+}
+
+#bannierecookieServices::-webkit-scrollbar {
+    width: 5px;
+}
+
+#bannierecookieServices::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0);
+}
+
+#bannierecookieServices::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  outline: 0px solid slategrey;
+}
+
+div#bannierecookieServices {
+    box-shadow: 0 0 35px #575757;
+}
+
+/***
+ * Responsive layout for the control panel
+ */
+@media screen and (max-width:479px) {
+    #bannierecookie .bannierecookieLine .bannierecookieName {
+        width: 90% !important;
+    }
+
+    #bannierecookie .bannierecookieLine .bannierecookieAsk {
+        float: left !important;
+        margin: 10px 15px 5px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #bannierecookieAlertSmall #bannierecookieCookiesListContainer, #bannierecookie {
+        background: #fff;
+        border: 0 !important;
+        bottom: 0 !important;
+        height: 100% !important;
+        left: 0 !important;
+        margin: 0 !important;
+        max-height: 100% !important;
+        max-width: 100% !important;
+        top: 0 !important;
+        width: 100% !important;
+    }
+
+    #bannierecookie .bannierecookieBorder {
+        border: 0 !important;
+    }
+
+    #bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList {
+        border: 0 !important;
+    }
+
+    #bannierecookie #bannierecookieServices .bannierecookieTitle {
+        text-align: left !important;
+    }
+
+    .bannierecookieName .bannierecookieH2 {
+        max-width: 80%;
+    }
+
+    #bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieAsk {
+        text-align: center !important;
+    }
+
+        #bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieAsk button {
+            margin-bottom: 5px;
+        }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    #bannierecookie {
+        border: 0 !important;
+        left: 0 !important;
+        margin: 0 5% !important;
+        max-height: 80% !important;
+        width: 90% !important;
+    }
+}
+
+/***
+ * Common value
+ */
+#bannierecookie * {
+    zoom: 1;
+}
+
+#bannierecookieRoot div#bannierecookie {
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#bannierecookieRoot button#bannierecookieBack {
+    background: #eee;
+}
+
+#bannierecookie .clear {
+    clear: both;
+}
+
+#bannierecookie a {
+    color: rgb(66, 66, 66);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#bannierecookieRoot button {
+    background: transparent;
+    border: 0;
+}
+
+#bannierecookieAlertBig strong, #bannierecookieAlertSmall strong,
+#bannierecookieAlertBig a, #bannierecookieAlertSmall a {
+    color: #fff;
+}
+
+#bannierecookie strong {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#bannierecookie ul {
+    padding: 0;
+}
+
+#bannierecookie .bannierecookieH1, #bannierecookie .bannierecookieH2, #bannierecookie .bannierecookieH3, #bannierecookie .bannierecookieH4, #bannierecookie .bannierecookieH5, #bannierecookie .bannierecookieH6 {
+  display: block;
+}
+
+.cookie-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/***
+ * Root div added just before </body>
+ */
+#bannierecookieRoot {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+#bannierecookieRoot * {
+    box-sizing: initial;
+    color: #333;
+    font-family: sans-serif !important;
+    font-size: 14px;
+    line-height: normal;
+    vertical-align: initial;
+}
+
+#bannierecookieRoot .bannierecookieH1 {
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+    margin: 15px 0 28px;
+}
+
+#bannierecookieRoot .bannierecookieH2 {
+    display: inline-block;
+    margin: 12px 0 0 10px;
+    color: #fff;
+}
+
+#bannierecookieCookiesNumberBis.bannierecookieH2 {
+    margin-left: 0;
+}
+
+/***
+ * Control panel
+ */
+#bannierecookieBack {
+    background: #fff;
+    display: none;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2147483646;
+}
+
+#bannierecookie {
+    display: none;
+    max-height: 80%;
+    left: 50%;
+    margin: 0 auto 0 -430px;
+    padding: 0;
+    position: fixed;
+    top: 6%;
+    width: 860px;
+    z-index: 2147483647;
+}
+
+#bannierecookie .bannierecookieBorder {
+    background: #fff;
+    border: 2px solid #333;
+    border-top: 0;
+    height: auto;
+    overflow: auto;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieClosePanelCookie,
+#bannierecookie #bannierecookieClosePanel {
+    background: #333333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 4px 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 70px;
+}
+
+#bannierecookie #bannierecookieDisclaimer {
+    color: #555;
+    font-size: 12px;
+    margin: 15px auto 0;
+    width: 80%;
+}
+
+.bannierecookieSelfLink, #bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieHidden,
+#bannierecookie #bannierecookieServices .bannierecookieHidden {
+    background: rgba(51, 51, 51, 0.07);
+}a.bannierecookieSelfLink {
+    text-align: center!important;
+    display: block;
+    padding: 7px!important;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieHidden {
+    display: none;
+    position: relative;
+}
+
+#bannierecookieCookiesList .bannierecookieH3.bannierecookieTitle {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieTitle, 
+#bannierecookie #bannierecookieServices .bannierecookieTitle button, 
+#bannierecookie #bannierecookieInfo, 
+#bannierecookie #bannierecookieServices .bannierecookieDetails {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 20px 0px 0px;
+    padding: 5px 20px;
+    text-align: left;
+    width: auto;
+    background: #333;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine .bannierecookieName a,
+#bannierecookie #bannierecookieServices .bannierecookieTitle a {
+    color: #fff;
+    font-weight: 500;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine .bannierecookieName a:hover,
+#bannierecookie #bannierecookieServices .bannierecookieTitle a:hover {
+    text-decoration: none !important;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine .bannierecookieName a {
+    font-size: 22px;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieTitle a {
+    font-size: 14px;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieTitle {
+    padding: 5px 10px;
+    margin: 0;
+}
+
+#bannierecookie #bannierecookieInfo,
+#bannierecookie #bannierecookieServices .bannierecookieDetails {
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 0;
+    max-width: 270px;
+    padding: 20px;
+    position: absolute;
+    z-index: 2147483647;
+}
+
+#bannierecookie #bannierecookieInfo a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine:hover {
+    background: rgba(51, 51, 51, 0.2);
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine {
+    background: rgba(51, 51, 51, 0.1);
+    border-left: 5px solid transparent;
+    margin: 0;
+    overflow: hidden;
+    padding: 15px 5px;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine.bannierecookieIsAllowed {
+    border-color: #1B870B;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine.bannierecookieIsDenied {
+    border-color: #9C1A1A;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine {
+    background: #333;
+    border: 3px solid #333;
+    border-left: 9px solid #333;
+    border-top: 5px solid #333;
+    margin-bottom: 0;
+    margin-top: 21px;
+    position: relative;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine:hover {
+    background: #333;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine .bannierecookieName {
+    margin-left: 15px;
+    margin-top: 2px;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine .bannierecookieName button {
+    color: #fff;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieMainLine .bannierecookieAsk {
+    margin-top: 0px !important;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieName {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    text-align: left;
+    width: 50%;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieName a:hover {
+    text-decoration: underline;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieAsk {
+    display: inline-block;
+    float: right;
+    margin: 7px 15px 0;
+    text-align: right;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieAsk .bannierecookieAllow,
+#bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieAsk .bannierecookieDeny,
+.tac_activate .bannierecookieAllow {
+    background: gray;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    border: 0;
+}
+
+#bannierecookie #bannierecookieServices #bannierecookieAllAllowed.bannierecookieIsSelected {
+    background-color: #1B870B;
+    opacity: 1;
+}
+#bannierecookie #bannierecookieServices #bannierecookieAllDenied.bannierecookieIsSelected {
+    background-color: #9C1A1A;
+    opacity: 1;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine.bannierecookieIsAllowed .bannierecookieAllow {
+    background-color: #1B870B;
+}
+#bannierecookie #bannierecookieServices .bannierecookieLine.bannierecookieIsDenied .bannierecookieDeny {
+    background-color: #9C1A1A;
+}
+
+#bannierecookie #bannierecookieServices .bannierecookieLine .bannierecookieName .bannierecookieListCookies {
+    color: #333;
+    font-size: 12px;
+}
+
+#bannierecookie .bannierecookieH3 {
+    font-size: 18px;
+}
+
+#bannierecookie #bannierecookieMainLineOffset .bannierecookieName {
+    width: auto!important;
+    margin-left: 0!important;
+    font-size: 14px;
+}
+#bannierecookieDisclaimerAlert{
+    color: white !important;
+}
+body #bannierecookieRoot div#bannierecookieAlertBig{
+    border-radius: 0 !important;
+}
+
+/***
+ * Big alert
+ */
+.bannierecookieAlertBigTop {
+    top: 0;
+}
+
+.bannierecookieAlertBigBottom {
+    bottom: 0;
+}
+
+#bannierecookieRoot #bannierecookieAlertBig {
+    background: #333;
+    color: #fff;
+    display: none;
+    font-size: 15px !important;
+    left: 0;
+    position: fixed;
+    box-sizing: content-box;
+    z-index: 2147483645;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+#bannierecookieAlertBig #bannierecookiePrivacyUrl,
+#bannierecookieAlertBig #bannierecookiePrivacyUrlDialog,
+#bannierecookieAlertBig #bannierecookieDisclaimerAlert,
+#bannierecookieAlertBig #bannierecookieDisclaimerAlert strong {
+    font: 15px verdana;
+    color: #fff;
+}
+
+#bannierecookieAlertBig #bannierecookieDisclaimerAlert strong {
+    font-weight: 700;
+}
+
+#bannierecookieAlertBig #bannierecookiePrivacyUrl,
+#bannierecookieAlertBig #bannierecookiePrivacyUrlDialog {
+    cursor: pointer;
+}
+
+#bannierecookieAlertBig #bannierecookieCloseAlert, #bannierecookieAlertBig #bannierecookiePersonalize, #bannierecookie #bannierecookiePrivacyUrl, #bannierecookie #bannierecookiePrivacyUrlDialog {
+    background: #008300;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-left: 7px;
+    border-radius: 40px;
+}
+
+#bannierecookieAlertBig #bannierecookieCloseAlert, #bannierecookie #bannierecookiePrivacyUrl, #bannierecookie #bannierecookiePrivacyUrlDialog {
+    background: #008300;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 3px;
+    margin-left: 7px;
+    padding: 4px 10px;
+    border-radius: 40px;
+}
+
+#bannierecookiePercentage {
+    background: #0A0!important;
+    box-shadow: 0 0 2px #fff, 0 1px 2px #555;
+    height: 5px;
+    left: 0;
+    position: fixed;
+    width: 0;
+    z-index: 2147483644;
+}
+
+/***
+ * Small alert
+ */
+
+.bannierecookieAlertSmallTop,.bannierecookieAlertSmallBottom {
+    bottom: 0;
+}
+
+#bannierecookieAlertSmall {
+    background: #333;
+    display: none;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    width: auto;
+    z-index: 2147483646;
+}
+
+#bannierecookieAlertSmall #bannierecookieManager {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px !important;
+    padding: 8px 10px 8px;
+}
+
+#bannierecookieAlertSmall #bannierecookieManager:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot {
+    background-color: gray;
+    border-radius: 5px;
+    display: block;
+    height: 8px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot #bannierecookieDotGreen,
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot #bannierecookieDotYellow,
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot #bannierecookieDotRed {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 0%;
+}
+
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot #bannierecookieDotGreen {
+    background-color: #1B870B;
+}
+
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot #bannierecookieDotYellow {
+    background-color: #FBDA26;
+}
+
+#bannierecookieAlertSmall #bannierecookieManager #bannierecookieDot #bannierecookieDotRed {
+    background-color: #9C1A1A;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesNumber {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0px 10px;
+    vertical-align: top;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesNumber:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer {
+    display: none;
+    max-height: 70%;
+    max-width: 500px;
+    position: fixed;
+    right: 0;
+    width: 100%;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList {
+    background: #fff;
+    border: 2px solid #333;
+    color: #333;
+    font-size: 11px;
+    height: auto;
+    overflow: auto;
+    text-align: left;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList strong {
+    color: #333;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesTitle {
+    background: #333;
+    margin-top: 21px;
+    padding: 13px 0 9px 13px;
+    text-align: left;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesTitle strong {
+    color: #fff;
+    font-size: 16px;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieCookiesListMain {
+    background: rgba(51, 51, 51, 0.1);
+    padding: 7px 5px 10px;
+    word-wrap: break-word;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieCookiesListMain:hover {
+    background: rgba(51, 51, 51, 0.2);
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieCookiesListMain a {
+    color: #333;
+    text-decoration: none;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieCookiesListMain .bannierecookieCookiesListLeft {
+    display: inline-block;
+    width: 50%;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieCookiesListMain .bannierecookieCookiesListLeft a strong {
+    color: darkred;
+}
+
+#bannierecookieAlertSmall #bannierecookieCookiesListContainer #bannierecookieCookiesList .bannierecookieCookiesListMain .bannierecookieCookiesListRight {
+    color: #333;
+    display: inline-block;
+    font-size: 11px;
+    margin-left: 10%;
+    vertical-align: top;
+    width: 30%;
+}
+
+/***
+ * Fallback activate link
+ */
+.tac_activate {
+    background: #333;
+    color: #fff;
+    display: table;
+    font-size: 12px;
+    height: 100%;
+    line-height: initial;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.tac_float {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tac_activate .tac_float strong {
+    color: #fff;
+}
+
+.tac_activate .tac_float .bannierecookieAllow {
+    background-color: #1B870B;
+    display: inline-block;
+}
+
+/***
+ * CSS for services
+ */
+ins.ferank-publicite, ins.adsbygoogle {
+    text-decoration: none;
+}
+
+div.amazon_product {
+    height:240px;
+    width:120px;
+}
+.bannierecookieIsAllowed .bannierecookieDeny {
+    opacity: 0.4!important;
+}.bannierecookieIsDenied .bannierecookieAllow {
+    opacity: 0.4!important;
+}.bannierecookieIsAllowed .bannierecookieAllow {
+    opacity: 1!important;
+}.bannierecookieIsDenied .bannierecookieDeny {
+    opacity: 1!important;
+}
+.bannierecookieLine .bannierecookieAllow, .bannierecookieLine .bannierecookieDeny {
+    opacity: 0.4;
+}
+
+div#bannierecookieInfo {
+    display: block!important;
+    position: relative !important;
+    text-align: center!important;
+    max-width: 80%!important;
+    padding: 15px 0!important;
+    margin: -10px auto 40px!important;
+    font-size: 1em!important;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: #555;
+}
+
+a.bannierecookieSelfLink {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: 13px!important;
+    display: block;
+    text-shadow: 0 0 14px white;
+    text-transform: uppercase;
+}.bannierecookieMainLine .bannierecookieH2 {
+    font-size: 1.2em!important;
+    margin-top: 4px!important;
+}
+
+span.bannierecookieTitle.bannierecookieH3 {
+    margin-top: 12px!important;
+}
+
