@@ -5,7 +5,7 @@
 require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
 /**
- * FONCTIONS UTILES
+ * FONCTIONS UTILES okokokokok
  */
 function check_input($data) { 
     
