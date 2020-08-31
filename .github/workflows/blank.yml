@@ -15,4 +15,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         source: "."
-        target: "www.cbnm.org"
+        target: "/www.cbnm.org"
