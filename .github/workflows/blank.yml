@@ -1,16 +1,38 @@
-name: remote ssh command
+name: CI
+ 
 on: [push]
+ 
 jobs:
-
   build:
-    name: Build
+ 
+    # using Ubuntu
     runs-on: ubuntu-latest
+ 
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1 #this installs node and npm for us
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: cd reunion && bash scripts/script.sh
+        node-version: '10.x'
+ 
+    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+ 
+    - run: npm install
+    - run: npm install -g @angular/cli > /dev/null
+    - run: ng build --prod
+ 
+    - name: copy file via ssh key
+      uses: appleboy/scp-action@master
+      env:
+        HOST: 51.75.99.223
+        USERNAME: webdev
+        PORT: 6789
+        KEY: ${{ secrets.forSSH }}
+      with:
+        source: "./dist/cbnmtestci/"
+        target: "test"
+        strip_components: 3 # this is important
