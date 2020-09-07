@@ -18,7 +18,7 @@ jobs:
           remote_user: ${{ secrets.DEPLOY_USER }}
           remote_key: ${{ secrets.DEPLOY_KEY }}
           local_dir: "dist/cbnmtestci/"
-          remote_dir: "~/var/www/html/ie/lutte_eee/"
+          remote_dir: "/var/www/html/ie/lutte_eee/"
         run: |
           npm install
           npm run build
