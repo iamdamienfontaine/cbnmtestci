@@ -1,0 +1,50 @@
+
+/* LEGEND */
+.legend-icon {
+    display: inline-block; 
+    margin-right: 0.5em; 
+    height: 30px; min-width:30px;
+    border: 2px solid;
+}
+.legend-icon--icon {
+    height: 27px; width: 27px;
+    padding: 3px 0 0 3px;
+    color: #2979FF;
+    border-color: #FFF;
+}
+.legend-icon--choca {
+    border-color: rgba(255, 255, 0, 1);
+}
+.legend-icon--choca-1 {
+    background-color:rgba(255, 255, 0, 1);
+}
+.legend-icon--choca-2 {
+    background-color:rgba(255, 255, 0, 0.5);
+}
+.legend-icon--choca-3 {
+    background-color:rgba(255, 255, 0, 0);
+}
+.legend-icon--sisal {
+    border-color: rgba(198,255,0, 1);
+}
+.legend-icon--sisal-1 {
+    background-color:rgba(198,255,0, 1);
+}
+.legend-icon--sisal-2 {
+    background-color:rgba(198,255,0, 0.5);
+}
+.legend-icon--sisal-3 {
+    background-color:rgba(198,255,0 ,0);
+}
+.legend-icon--fataque {
+    border-color: rgba(255,165,0, 1);
+}
+.legend-icon--fataque-1 {
+    background-color:rgba(255,165,0, 1);
+}
+.legend-icon--fataque-2 {
+    background-color:rgba(255,165,0, 0.5);
+}
+.legend-icon--fataque-3 {
+    background-color:rgba(255,165,0, 0);
+}

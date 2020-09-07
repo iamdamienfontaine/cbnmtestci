@@ -1,0 +1,49 @@
+
+<mat-toolbar>
+  <span>Populations</span>
+  <span fxFlex></span>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon class="material-icons">close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div style="padding: 0.5em 1em 0" fxLayout="column">
+
+  <button class="btn-show-bilan" mat-stroked-button (click)="showBilan()" color="primary">
+    Bilan global
+  </button>
+
+  <mat-form-field fxFlex>
+    <mat-select [(value)]="data.filters.taxon_id" (selectionChange)="filter()">
+      <mat-option></mat-option>
+      <mat-option value="1"> Furcraea foetida - Choca </mat-option>
+      <mat-option value="2"> Agave sisalana - Sisal </mat-option>
+      <mat-option value="3"> Urochloa maxima - Fataque </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+
+<mat-list fxFlex style="overflow:auto">
+
+  <mat-list-item class="mat-list-item--populations" 
+                 *ngFor="let population of data.items_displayed; trackBy: trackByTaxonId" 
+                 (click)="showInfo( population.population_id )"
+                 [class.item-active]="population.population_id == activePopulation"
+                 id="{{ 'popId' + population.population_id}}">
+
+    <h3 matLine color="primary"> {{population.taxon_nom_vernaculaire}} - Population n°{{population.pop_id}} </h3>
+
+    <p matLine> 
+      <span class="label label-{{population.pop_typologie_class}}">{{population.pop_typologie_label}}</span>
+    </p>
+
+    <p matLine class="demo-2"> 
+      Lutte : <span class="item-badge">{{population.pop_nb_act}}</span> - 
+      Suivi : <span class="item-badge">{{population.pop_nb_suivi}}</span> 
+    </p>
+
+  </mat-list-item>
+
+</mat-list>
+  

@@ -1,0 +1,75 @@
+
+<div fxLayout="column" style="height: 100%">
+
+  <h2 mat-dialog-title color="accent">
+
+    <span fxFlex>Programmes de lutte contre les espèces végétales exotiques envahissantes sur l’île Tromelin</span>
+
+    <button mat-button [mat-dialog-close]="true">
+      <mat-icon class="material-icons">close</mat-icon>
+    </button>
+
+  </h2>
+  
+  <mat-dialog-content fxFlex>
+     
+    <div fxLayout="row wrap" fxHide.lt-md="true" class="icono-rowrap">
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/alover-TROMELIN-avril2011-JH3.jpg"/></div>
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/cocnuc-TRO-20130823-CF2.jpg"/></div>
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/confal-20130820-CF1.jpg"/></div>
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Euphir-TROMELIN-20171113-JH3.jpg"/></div>
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Lepeng-TROMELIN-20171114-JH2.jpg"/></div>
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/oxacor2-JH20100625.jpg"/></div>
+      <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Panpse-TROMELIN-20180113-JH1.jpg"/></div>
+    </div>
+
+    <br/>
+
+    <p align="justify">
+        Sur l’île Tromelin (1 km2), le programme de lutte concerne actuellement 7 espèces végétales exotiques envahissantes : 
+        l’Aloès amer (Aloe vera), le Cactus sémaphore (Consolea falcata), le Cocotier (Cocos nucifera), 
+        le Jean-Robert (Euohorbia hirta), le Lépidium (Lepidium englerianum), 
+        le Panicum (Panicum pseudowoeltzkowii) et le Ti trèfle (Oxalis corniculata).
+    </p>
+
+    <p align="justify">
+        Conçu sous la forme d’une interface cartographique, ce site permet de connaitre la localisation des stations/individus d’EEE, 
+        de consulter en détail les diverses actions (lutte ou suivi ou traitement des déchets verts) menées contre les EEE et de dresser des bilans 
+        (à l’échelle de chaque EEE, bilan global ou bilan par type d’action). 
+        Ces données sont régulièrement actualisées et complétées au gré des actions menées in situ.
+    </p>
+
+    <h2 color="accent">Règles de fonctionnement</h2>
+
+    <h3 color="accent"> Bandeau Liste des taxons et Carte </h3>
+
+    <ul>
+      <li>
+        <p align="justify">
+          Cliquer sur l’icône <mat-icon class="material-icons mat-icon-translate">chrome_reader_mode</mat-icon> (en haut à gauche) afin de faire apparaitre le bandeau ‘Liste des taxons’.
+        </p>
+      </li>
+      <li>
+        <p align="justify">
+          Pour afficher les stations/individus d’un taxon donné sur la carte, cliquer sur l’icône <mat-icon class="material-icons mat-icon-translate">location_on</mat-icon> figurant à côté du nom du taxon. 
+          <br/>
+          Il y a possibilité de se déplacer sur la carte, de zoomer ou dézoomer. Contrairement à la page dédiée aux programmes de lutte sur Europa, 
+          les géométries correspondant à l’affichage des stations/individus (à l'état initial) sur Tromelin ne sont pas interactives et l’icône <mat-icon class="material-icons mat-icon-translate">layers</mat-icon> 
+          (légendes) ne propose aucune donnée (pas de typologie associée au remplissage des géométries).
+        </p>
+      </li>
+      <li>
+        <p align="justify">
+          Cliquer sur le taxon souhaité pour faire apparaitre une nouvelle fenêtre d’affichage des informations associées au taxon sélectionné.
+          <br/>
+          Sélectionner le sous-onglet correspondant aux informations recherchées : ’Etat initial’ ou ‘Actions’ ou ‘Bilans’.
+          <br/>
+          Dans le cas du sous-onglet ‘Actions’, il faut d’abord choisir le type d’action (‘Lutte’ ou ‘Suivi’ ou ‘Traitement déchets verts’) dans le menu déroulant, 
+          puis cliquer sur une date (classement par ordre chronologique décroissant) afin d’obtenir toutes les informations relatives à l’action sélectionnée.
+        </p>
+      </li>
+    </ul>
+
+  </mat-dialog-content>
+
+</div>

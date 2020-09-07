@@ -1,0 +1,23 @@
+
+:host app-map {
+    z-index: 1;
+}
+
+
+mat-sidenav {
+    min-width: 320px;
+    max-width: 360px;
+  }
+
+:host > mat-sidenav-container {
+    z-index: unset;
+}
+mat-sidenav-content {
+    z-index: unset;
+}
+
+@media (max-width: 599px) { 
+    .app-sidenav-container.mat-drawer-container {
+        top: 56px;
+    }
+}

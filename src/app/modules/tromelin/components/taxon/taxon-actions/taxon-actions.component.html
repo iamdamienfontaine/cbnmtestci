@@ -1,0 +1,36 @@
+
+<div fxLayout="column" style="height: 100%">
+  <div>
+    <mat-form-field appearance="legacy">
+      
+      <mat-select [(value)]="data.filters.type_action" placeholder="Filtrer par type d'action" (selectionChange)="filterActions()">
+        <mat-option></mat-option>
+        <mat-option value="Lutte"> Lutte </mat-option>
+        <mat-option value="Suivi"> Suivi </mat-option>
+        <mat-option value="Traitement déchets verts"> Traitement déchets verts </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+    
+    
+    <mat-nav-list fxFlex>
+
+      <cdk-virtual-scroll-viewport itemSize="50" minBufferPx="750" maxBufferPx="1250" class="example-viewport">
+        
+        <mat-list-item style="height:50px" *cdkVirtualFor="let item of ds" class="example-item">
+          {{item?.id?'':'Loading...'}}
+          <a matLine href="javascript:" color="primary" (click)="showActionInfos( item )"
+            class="default-link-color" > {{ item?.date }} </a>
+          <p matLine> {{item?.type_action == "Lutte"?"Action de lutte":item?.type_action == "Suivi"?"Action de suivi":item?.type_action}} </p>
+        </mat-list-item>
+
+      </cdk-virtual-scroll-viewport>
+
+    </mat-nav-list>
+
+
+</div>
+
+<app-taxon-action [class.active]="data.ui.displayActionInfos" 
+                  (onClose)="closeActionInfos()" 
+                  [actionInfos]="data.itemSelected"></app-taxon-action>

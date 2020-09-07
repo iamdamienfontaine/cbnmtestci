@@ -1,0 +1,112 @@
+<div fxLayout="column" style="height: 100%">
+    <div style="text-align: center">
+        <button mat-stroked-button (click)="close()">
+            FERMER
+        </button>
+    </div>
+
+    <h3 color="accent">{{actionInfos.type_action}}</h3>   
+
+    <div fxFlex style="overflow-x:hidden; overflow-y: auto">
+        <div fxLayout="column">
+
+            <div fxLayout="row"  fxLayout.lt-sm="column" fxLayoutGap="8px">
+                
+                <div fxFlex>
+                    <div class="item-container">Date : 
+                        <div class="item-value">{{actionInfos.date}}</div>
+                    </div>
+
+                    <div class="item-container">Acteurs : 
+                        <div class="item-value">{{actionInfos.acteur}}</div>
+                    </div>
+
+                    <div class="item-container">Opérateurs : 
+                        <div class="item-value">{{actionInfos.operateurs}}</div>
+                    </div>
+                </div>
+                <div fxFlex>
+                    <div class="item-container">Nombre de personnes : 
+                        <div class="item-badge">{{actionInfos.nb_personnes}}</div>
+                    </div>
+
+                    <div class="item-container">Durée de l'action (min) : 
+                        <div class="item-badge">{{actionInfos.h_tot_min}}</div>
+                    </div>
+
+                    <div class="item-container">Durée x nombre de personne (min): 
+                        <div class="item-badge">{{actionInfos.h_tot_personnes}}</div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr/>
+
+            <div fxLayout="row"  fxLayout.lt-sm="column" fxLayoutGap="8px">
+                
+                <div fxFlex>
+                    <div class="item-label"> Stade(s) biologique(s) traité(s) : </div>
+                    <div class="item-value"> 
+                        <ul>  
+                            <li *ngFor="let stade of actionInfos.stades_bio">{{stade}}</li> 
+                        </ul>
+                    </div> 
+                </div>
+
+                <div fxFlex>
+                    <div class="item-label"> Méthode(s) appliquée(s) : </div>
+                    <div class="item-value"> 
+                        <ul>  
+                            <li *ngFor="let method of actionInfos.methodes">{{method}}</li> 
+                        </ul>
+                    </div> 
+                </div>
+
+            </div>
+            
+            <hr/>
+
+            <div fxLayout="row"  fxLayout.lt-sm="column" fxLayoutGap="8px">
+                
+                <div fxFlex>
+                    <div class="item-container" *ngIf="actionInfos.taxon_id == 5">Nombre de drageons traités : 
+                        <div class="item-badge">{{actionInfos.resultats?.drageon}}</div>
+                    </div>
+
+                    <div class="item-container" *ngIf="actionInfos.taxon_id == 6">Nombre de boutures traitées : 
+                        <div class="item-badge">{{actionInfos.resultats?.bouture}}</div>
+                    </div>
+
+                    <div class="item-container" *ngIf="actionInfos.taxon_id == 4">Nombre d'inflorescences / infrutescences traitées : 
+                        <div class="item-badge">{{actionInfos.resultats?.inflorescence}}</div>
+                    </div>
+
+                    <div class="item-container"  *ngIf="actionInfos.taxon_id == 4">Nombre de "bigbag" : 
+                        <div class="item-badge">{{actionInfos.resultats?.bigbag}}</div>
+                    </div>
+                </div>
+                
+                <div fxFlex>
+                    <div class="item-container" *ngIf="[4,7,11,10].indexOf(actionInfos.taxon_id) !== -1">Nombre de plantules traitées : 
+                        <div class="item-badge">{{actionInfos.resultats?.plantule}}</div>
+                    </div>
+
+                    <div class="item-container" *ngIf="[4,5,6,7,11].indexOf(actionInfos.taxon_id) !== -1">Nombre de juvéniles traités : 
+                        <div class="item-badge">{{actionInfos.resultats?.juvenile}}</div>
+                    </div>
+
+                    <div class="item-container" *ngIf="[4,5,6,7,10,11].indexOf(actionInfos.taxon_id) !== -1">Nombre d'adultes traités : 
+                        <div class="item-badge">{{actionInfos.resultats?.adulte}}</div>
+                    </div>
+
+                    <div class="item-container">Nombre total d'individus traités : 
+                        <div class="item-badge">{{actionInfos.resultats?.tot}}</div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+    <div>
+</div>

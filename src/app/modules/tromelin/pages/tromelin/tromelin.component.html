@@ -1,0 +1,13 @@
+<app-map [ileId]="data.ui.ileId" ></app-map>
+
+<mat-sidenav-container class="app-sidenav-container" >
+    
+  <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [(opened)]="data.ui.sidenavOpened" fxLayout="column" class="mat-elevation-z2"
+                        (closed)="sidenavClosed()">      
+      <tromelin-taxons-list [sidenav]="sidenav"></tromelin-taxons-list>
+      
+  </mat-sidenav>
+
+  <mat-sidenav-content></mat-sidenav-content>
+  
+</mat-sidenav-container>

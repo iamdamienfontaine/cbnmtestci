@@ -1,0 +1,78 @@
+<div style="margin: 1em; padding:0.5em" class="mat-elevation-z1">
+
+    <div style="text-align: center">
+        <button mat-stroked-button (click)="close()">
+            FERMER
+        </button>
+    </div>
+    <br/>
+    <div fxLayout="row" fxLayout.lt-sm="column">
+
+        <div fxFlex>
+
+            <div class="item-label"> Date : </div>
+            <div class="item-value">
+                {{data.item.suivi_date}}    
+            </div>                             
+            
+            <div class="item-label"> Acteur : </div>
+            <div class="item-value">
+                {{data.item.suivi_acteur}} 
+            </div> 
+            
+            <div class="item-label"> Opérateur : </div>
+            <div class="item-value">
+                {{data.item.suivi_operateur}} 
+            </div> 
+            
+            <div class="item-container"> 
+              Nombre de personnes :
+              <div class="item-badge"> {{data.item.nb_personnes}} </div> 
+            </div>
+
+            <div class="item-container"> 
+              Surface traitée (m²) :
+              <div class="item-badge"> {{data.item.suivi_surf_traitee}} </div> 
+            </div>
+            
+        </div> 
+
+        <div fxFlex> 
+            <div class="item-label"> Phénologie : </div>
+            <div class="item-value"> 
+                <ul>  
+                    <li *ngFor="let stade of data.item.suivi_stade_pheno">{{stade}}</li> 
+                </ul>
+            </div> 
+
+            <div class="item-label"> Stade(s) biologique(s) traité(s) : </div>
+            <div class="item-value"> 
+                <ul>  
+                    <li *ngFor="let stade of data.item.suivi_stade_ttt">{{stade}}</li> 
+                </ul>
+            </div> 
+            
+                                    
+            <div class="item-label"> Méthode(s) de lutte appliquée(s) : </div>
+            <div class="item-value">
+                <ul>  
+                    <li *ngFor="let stade of data.item.suivi_methode">{{stade}}</li> 
+                </ul> 
+            </div> 
+            
+            <div class="item-label"> Outil(s) utilisé(s) : </div>
+            <div class="item-value"> 
+                <ul>  
+                    <li *ngFor="let stade of data.item.suivi_outils">{{stade}}</li> 
+                </ul> 
+            </div> 
+
+            <div class="item-label"> Éradication définitive : </div>
+            <div class="item-value"> {{data.item.suivi_eradication}} </div>
+
+            <div class="item-label"> Besoin de suivre à nouveau : </div>
+            <div class="item-value"> {{data.item.suivi_new}} </div>
+            
+        </div> 
+    </div>
+</div>

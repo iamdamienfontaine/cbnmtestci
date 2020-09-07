@@ -1,0 +1,24 @@
+:host {
+    height: 100%;
+    margin: 0;
+}
+
+
+:host > mat-toolbar {
+    position: relative;
+    z-index: 9;
+}
+
+:host .uiToggleIsland {
+    cursor: pointer;
+}
+
+:host .islandToolbar {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+:host .islandToolbar.show {
+    height: 64px;
+}

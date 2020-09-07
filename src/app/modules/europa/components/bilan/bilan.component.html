@@ -1,0 +1,40 @@
+<div fxLayout="column" style="height: 100%">
+
+    <h2 color="accent" mat-dialog-title>
+        Bilan global des actions de lutte et de suivi par EEE
+        <span fxFlex></span>
+        <button mat-button [mat-dialog-close]="true">
+            <mat-icon aria-label="close">
+                close
+            </mat-icon>
+        </button>
+    </h2>
+    
+    <mat-dialog-content fxFlex>
+     <mat-tab-group>
+        
+        <mat-tab>
+            <ng-template mat-tab-label>
+                    <i>Furcraea foetida</i>&nbsp;(Choca)
+            </ng-template>
+            <bilan-choca [bilan]="bilans.choca"></bilan-choca>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <i>Agave sisalana</i>&nbsp;(Sisal)
+            </ng-template>
+            <bilan-choca [bilan]="bilans.sisal"></bilan-choca>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <i>Urochloa maxima</i>&nbsp;(Fataque)
+            </ng-template>
+            <bilan-fataque [bilan]="bilans.fataque"></bilan-fataque>
+        </mat-tab>
+    
+    </mat-tab-group>
+    </mat-dialog-content>
+
+</div>               

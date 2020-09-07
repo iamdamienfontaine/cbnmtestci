@@ -1,0 +1,138 @@
+<div fxLayout="column" style="height: 100%">
+
+<h2 mat-dialog-title color="accent">
+  {{population.item.taxon.taxon_nom_vernaculaire}} - Population n°{{population.item.pop_id}}
+  <span fxFlex></span>
+  <button mat-button [mat-dialog-close]="true">
+    <mat-icon class="material-icons">close</mat-icon>
+  </button>
+</h2>
+
+<div>
+  <span class="alert alert-{{population.item.pop_typologie_class}}">
+    {{population.item.pop_typologie_label}}
+  </span>
+</div>
+
+<mat-dialog-content fxFlex fxLayout="column">
+
+
+  <mat-tab-group>
+
+    <mat-tab label="État initial">
+
+      <div fxLayout="row" fxLayout.lt-sm="column" style="padding-top: 0.5em" >
+
+        <div fxFlex>
+          
+            <div class="item-label"> Taxon : </div>
+            <div class="item-value"> {{population.item.taxon.taxon_lib}} </div>
+
+            <div class="item-label"> État : </div>
+            <div class="item-value"> {{population.item.pop_etat}} </div>
+
+            <div class="item-label"> Statut : </div>
+            <div class="item-value"> {{population.item.pop_statut}} </div>
+
+
+            <div *ngIf="population.item.pop_taxon_id == 1 || population.item.pop_taxon_id == 2">
+
+              <div class="item-label"> Présence de parasites : </div>
+              <div class="item-value"> {{population.item.json.pop_parasites}} </div>
+
+            </div>
+
+        </div>
+
+        <div fxFlex>
+
+            <div class="item-label"> Localité : </div>
+            <div class="item-value"> {{population.item.pop_localite}} </div>
+
+            <div class="item-label"> Coordonnées (WGS84 UTM37S) : </div>
+            <div class="item-value">
+                  <div><b>X</b> : {{population.item.pop_coordx}}</div>
+                  <div><b>Y</b>: {{population.item.pop_coordy}}</div>
+            </div>
+            
+
+            <div *ngIf="population.item.pop_taxon_id == 3">
+              <div class="item-label"> Système de végétation : </div>
+              <div class="item-value"> {{population.item.json?.systeme_vegetation}} </div>
+
+              <div class="item-label"> Habitat : </div>
+              <div class="item-value"> {{population.item.json?.habitat}} </div>
+
+              <div class="item-label"> Etat de conservation : </div>
+              <div class="item-value"> {{population.item.json?.etat_conservation}} </div>
+            </div>
+
+            
+            <div class="item-container">
+              Superficie (m²) :
+              <div class="item-badge"> {{population.item.pop_surf}} </div>
+            </div>
+
+
+            <div *ngIf="population.item.pop_taxon_id == 1 || population.item.pop_taxon_id == 2">
+
+              <div class="item-container">
+                Périmètre (m) :
+                <div class="item-badge"> {{population.item.json.pop_perimetre}} </div>
+              </div>
+
+            </div>
+
+        </div>        
+
+      </div>
+      
+    </mat-tab>
+
+    <mat-tab label="Actions de lutte/suivi" style="position: relative;" > 
+
+      <div fxLayout="column" style="height: 100%; padding-top: 0.5em">
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-select [(ngModel)]="ui.toggleList" placeholder="Filtrer par type d'action" (selectionChange)="filterActionsList()">
+              <mat-option></mat-option>
+              <mat-option value="lutte"> Lutte </mat-option>
+              <mat-option value="suivi"> Suivi </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <mat-list fxFlex style="overflow:auto">
+          <mat-list-item *ngFor="let action of actions.paginated">
+            <a matLine href="javascript:" color="primary" (click)="showActionInfo( action.type, action.taxon_id, action.id )"
+              class="default-link-color" > {{ action.date }} </a>
+              <p matLine>
+                Action de {{action.type}}
+              </p>
+            
+          </mat-list-item>
+        </mat-list>
+
+        <mat-paginator [pageIndex]="actions.currentPage"
+                        [length]="actions.rowCount"
+                        [pageSize]="actions.itemsPerPage"
+                        [pageSizeOptions]="[5, 10, 25, 100]"
+                        (page)="pageEventActionsSuivis($event)"
+                        [showFirstLastButtons]="true">
+        </mat-paginator>
+
+      </div>           
+        
+      <ng-template population-action></ng-template>
+
+    </mat-tab>
+
+    <mat-tab label="Bilan des actions" >
+      <population-bilan [population]="population.item" [bilan]="population.bilan"   style="padding-top: 0.5em"></population-bilan>
+      
+    </mat-tab>
+  </mat-tab-group>
+
+</mat-dialog-content>
+
+</div>

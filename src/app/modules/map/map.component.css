@@ -1,0 +1,76 @@
+:host {
+    position: absolute;
+    top:0; right: 0; bottom: 0; left: 0;
+}
+
+
+:host .mat-sidenav-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+#map-mouse-position {
+    position:absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+
+#openlayers-map {
+    height: 100%;
+}
+
+
+.map-button-row-left {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+.map-button-row-right {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+
+#openlayers-map-1 {
+    height: 100%;  
+    background: #FFF;
+    position: relative;
+}
+#openlayers-map-2 {
+    height: 100%;  
+    background: #FFF;
+    position: relative;
+}
+
+.sidenavToggle {
+    position: absolute; top: 63px; left: 0.5em; z-index: 2
+}
+@media (min-width: 601px) {
+
+    .sidenavToggle {
+        top: 71px;
+    }
+
+}
+
+
+
+.zoomButtons {
+    background-color: rgba(25,118,210,0.65);
+    border-radius: 3px;
+    color: white;
+    position: absolute; top: 63px; right: 0.5em; z-index: 2
+}
+@media (min-width: 599px) {
+
+    .zoomButtons {
+        top: 73px;
+    }
+
+}

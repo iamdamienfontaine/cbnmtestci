@@ -1,0 +1,81 @@
+<div fxLayout="column"style="padding-top: 0.5em" >
+    
+    <div class="item-container">Nombre total de populations : 
+        <div class="item-badge">{{bilan?.bilan_nb_pop}}</div>
+    </div>
+
+    <div class="item-container">Surface initiale (m²) : 
+        <div class="item-badge">{{bilan?.surf_init}}</div>
+    </div>
+
+
+    <div fxLayout="row" fxLayout.lt-sm="column" >
+        <div fxFlex>    
+        
+            <h2 color="accent">
+                Etat d'avancement des actions de lutte et de suivi par population
+            </h2>
+
+            <div class="item-container">
+                <ul>
+                    <li>
+                        Aucune action de lutte réalisée : 
+                        <span class="item-badge">{{bilan?.lutte_nb_sans}} ( {{bilan?.lutte_sans_percent}}% )</span>
+                    </li>
+                    <li>
+                        Actions de lutte terminées, actions de suivi en cours : 
+                        <span class="item-badge">{{bilan?.lutte_end_partial}} ( {{bilan?.lutte_endpartial_percent}}% )</span>
+                    </li>
+                    <li>
+                        Actions de lutte et de suivi terminées :
+                        <span class="item-badge">{{bilan?.lutte_end}} ( {{bilan?.lutte_end_percent}}% )</span> 
+                    </li>
+                </ul>
+            </div>
+        
+        </div>
+
+    </div>
+
+
+    <div fxLayout="row" fxLayout.lt-sm="column" >
+
+        <div fxFlex>    
+        
+            <h2 color="accent">Actions de lutte</h2>
+                
+            <div class="item-container">Nombre total d'actions de lutte : 
+                <div class="item-badge">{{bilan?.lutte_nb}}</div>
+            </div>
+            
+            <div class="item-container">Nombre total de personnes mobilisées : 
+                <div class="item-badge">{{bilan?.lutte_nb_ident}}</div>
+            </div>
+            
+        </div>
+
+        <div fxFlex>
+
+            <h2 color="accent">Actions de suivi</h2>
+                    
+            <div class="item-container">Nombre total de populations suivies au moins une fois: 
+                <div class="item-badge">{{bilan?.lutte_suivi_one}}</div>
+            </div>   
+        
+            <div class="item-container">Nombre total d'actions de suivi : 
+                <div class="item-badge">{{bilan?.suivi_nb}}</div>
+            </div>
+        
+            <div class="item-container">Nombre total de personnes mobilisées  : 
+                <div class="item-badge">{{bilan?.suivi_nb_ident}}</div>
+            </div>
+
+            <!-- <div class="item-container">Temps de suivi maximum (années) : 
+                <div class="item-badge"> {{bilan?.suivi_annee_max | number:'1.2-2'}}</div>
+            </div> -->
+            
+        </div>
+    
+    </div>
+
+</div>

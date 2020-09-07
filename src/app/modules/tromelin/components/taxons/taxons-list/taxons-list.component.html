@@ -1,0 +1,35 @@
+<mat-toolbar>
+  
+  <span>Liste des taxons</span>
+  
+  <span fxFlex></span>
+  
+  <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon class="material-icons">close</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<mat-nav-list>
+
+  <mat-list-item *ngFor="let taxon of data.items; trackBy: trackByTaxonId" 
+                 [class.item-active]="taxon.id == data.activeItem">
+
+    <a matLine href="javascript:" color="primary" (click)="showTaxonInfos( taxon.id )"
+       class="default-link-color" > {{taxon.nom_botanique}} ({{taxon.nom_vernaculaire}}) </a>
+
+    <p matLine>
+        <span class="label label-{{taxon.etat_class}}">{{taxon.etat_label}}</span>
+    </p>
+
+    <p matLine class="demo-2"> 
+      Total actions : <span class="item-badge">{{taxon.nb_global_tot}}</span> 
+    </p>
+    
+    <button mat-stroked-button (click)="showTaxonLocations( taxon.id )" color="default">
+      <mat-icon>location_on</mat-icon>
+    </button>
+
+  </mat-list-item>
+
+</mat-nav-list>

@@ -1,0 +1,83 @@
+<div style="margin: 1em; padding:0.5em" class="mat-elevation-z1">
+
+    <div style="text-align: center">
+        <button mat-stroked-button (click)="close()">
+            FERMER
+        </button>
+    </div>
+    <br/>
+    <div fxLayout="row" fxLayout.lt-sm="column"  class="overflow">
+
+        <div fxFlex>
+
+            <div class="item-label"> Date : </div>
+            <div class="item-value">
+                {{data.item.suivi_date}}    
+            </div>                             
+            
+            <div class="item-label"> Acteur : </div>
+            <div class="item-value">
+                {{data.item.suivi_acteurs}} 
+            </div> 
+            
+            <div class="item-label"> Chef d'équipe : </div>
+            <div class="item-value">
+                {{data.item.suivi_ident}} 
+            </div> 
+            
+            <div class="item-label"> Autres personnes : </div>
+            <div class="item-value">              
+                {{data.item.suivi_autres_ident}}                   
+            </div> 
+            
+            <div class="item-container"> Nombre de personnes :
+                <span class="item-badge">{{data.item.suivi_nb_ident}}</span> 
+            </div> 
+            
+            <div class="item-container"> Durée de l'action (min) :
+                <span class="item-badge">{{data.item.suivi_h_tot}}</span> 
+            </div> 
+                            
+            <div class="item-container"> Poids de bulbilles collectées (kg) :
+                <span  class="item-badge">{{data.item.suivi_pds_bulbe}}</span> 
+            </div> 
+                                                        
+            <div class="item-container"> Nombre de bulbilles collectées :
+                <span  class="item-badge">{{data.item.suivi_nb_bulb_collect}}</span> 
+            </div> 
+                                                                                    
+            <div class="item-container"> Nombre d'individus arrachés :
+                <span class="item-badge">{{data.item.suibi_nb_arrache}}</span> 
+            </div> 
+        </div> 
+
+        <div fxFlex> 
+            <div class="item-label"> Reprise d'individus traités : </div>
+            <div class="item-value">
+                {{data.item.suivi_reprise_ind}}
+            </div> 
+            
+            <div class="item-label"> Reprise de bulbilles : </div>
+            <div class="item-value">
+                {{data.item.suivi_reprise_bulb}}     
+            </div> 
+            
+            <div class="item-label"> Présence de germinations et/ou de plantules autres qu'EEE traitée : </div>
+            <div class="item-value">
+                <p align="justify"> 
+                {{data.item.suivi_presence_germ}}     
+                </p> 
+                <p align="justify"> 
+                {{data.item.suivi_presence_germ_rem}}     
+                </p> 
+            </div> 
+
+            <div class="item-label"> Besoin de traiter à nouveau : </div>
+            <div class="item-value"> {{data.item.suivi_new_ttt}} </div>
+
+            <div class="item-label"> Besoin de suivre à nouveau : </div>
+            <div class="item-value"> {{data.item.suivi_new}} </div>
+
+        </div> 
+    </div>
+</div>

@@ -1,1 +1,279 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~material-design-icons/iconfont/material-icons.css';
+
+@import 'ol/ol.css';
+
+@import './assets/css/alert.css';
+@import './assets/css/legend.css';
+@import './assets/css/material.css';
+
+
+/*
+ |
+ | BASE
+ |
+ */
+html, body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+
+/*
+ |
+ | HEADER
+ |
+ */
+h1[color="primary"], h2[color="primary"], h3[color="primary"], h4[color="primary"], h5[color="primary"], h6[color="primary"] {
+    color:#2196f3;
+}
+
+h1[color="accent"], h2[color="accent"], h3[color="accent"], h4[color="accent"], h5[color="accent"], h6[color="accent"] {
+    color: #e040fb;
+}
+
+
+/*
+ |
+ | LAYOUT
+ |
+ */
+dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dt[color="accent"] {
+    color: #e040fb;
+}
+
+
+/*
+ |
+ | LINK
+ |
+ */
+a.default-link-color, 
+.mat-nav-list a.default-link-color {
+    color: #2196f3
+}
+
+
+/*
+ |
+ | LAYOUT
+ |
+ */
+app-root {
+    display: block;
+    height: 100%;
+}
+
+
+/* MAIN-TOOLBAR  */
+.link_main {
+    text-decoration: none;
+    color: inherit
+}
+
+.uiToggleIsland {
+    background: transparent;
+    color: white;
+    border: 0;
+}
+
+
+
+/*
+ |
+ | COMPONENT LUTTE / SUIVI
+ |
+ */
+population-lutte, population-suivi, population-suivi-fataque {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #FFF;
+}
+
+/* APP-TAXON-INFOS */
+app-taxon-infos .mat-tab-body-wrapper .mat-tab-body:nth-child(2) {
+    overflow-y: hidden;
+}
+
+
+
+/*
+ |
+ | MAP
+ |
+ */
+
+ /* MAP CONTROLS */
+.ol-scale-line {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    left: unset;   
+}
+
+
+/* ITEM */
+.item-container {
+    margin-bottom: 1em;
+}
+.item-container,
+.item-label {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.010em;
+    line-height: 24px;
+}
+
+.item-container li {
+    font-weight: normal;
+}
+
+.item-value {
+
+    display: inline-block;
+    margin-bottom: 1em;
+    font-size: 16px;
+    font-weight: normal;
+} 
+
+.item-badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #2196f3;
+    border-radius: 7px;
+}
+
+
+
+/*
+ |
+ | COMPONENT ARTICLE
+ |
+ */
+.article {
+    padding: 24px;
+}
+
+zn-article {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+
+
+zn-article .mat-dialog-content,
+bilan .mat-dialog-content,
+population-dialog .mat-dialog-content,
+.mat-dialog-content.article
+{
+    max-height: none;
+}
+
+zn-article .mat-dialog-content.mat-dialog-content mat-tab-group,
+bilan .mat-dialog-content.mat-dialog-content mat-tab-group,
+population-dialog .mat-dialog-content mat-tab-group {
+    height: 100%;
+}
+
+zn-article .mat-dialog-content mat-tab-group .mat-tab-body-wrapper,
+bilan .mat-dialog-content mat-tab-group .mat-tab-body-wrapper,
+population-dialog .mat-dialog-content mat-tab-group .mat-tab-body-wrapper {
+    flex: 1;
+}
+
+.icono-rowrap {
+    padding: 2em 0
+}
+.under-dot {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+
+
+/* ARTICLE - ACCUEIL */
+.fake-selectIsland {
+    background-color: #2196f3;
+    color: #FFF;
+    display: block;
+    width: max-content;
+    padding: 0 8px;
+    margin-bottom: 8px;
+}
+.fake-selectIsland > img {
+    max-width: 40px;
+}
+
+/*
+ |
+ | WIDGET
+ |
+ */
+
+/* SPINNER */
+.mat-spinner.app-spinner {
+    position: absolute;
+    z-index: 9999;
+    top:50%;
+    bottom:50%;
+    left: 50%;
+    right: 50%;
+}
+
+/* IMG-THUMBNAIL */
+.img-thumbnail {
+    margin-right: 4px;
+    float: left;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+button#bannierecookieAllAllowed.bannierecookieAllow.bannierecookieIsSelected{
+    height: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  button#bannierecookieAllDenied.bannierecookieDeny.bannierecookieIsSelected{
+    height: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  button#bannierecookieAllDenied.bannierecookieDeny{
+    height: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  button#bannierecookieAllAllowed.bannierecookieAllow{
+    height: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }

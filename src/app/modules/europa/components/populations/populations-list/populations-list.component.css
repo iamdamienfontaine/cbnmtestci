@@ -1,0 +1,7 @@
+:host .mat-list-item--populations {
+    cursor: pointer;
+}
+
+.btn-show-bilan {
+    text-transform: uppercase;
+}

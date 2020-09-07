@@ -1,0 +1,54 @@
+.mat-typography {
+    font: 400 16px/20px "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/* 
+    APP-SIDENAV 
+ */
+ .app-sidenav-container.mat-drawer-container {
+    display: block;
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/* 
+    MATLIST 
+ */
+mat-list .item-active, mat-nav-list .item-active {
+    background-color:rgba(0, 0, 0, 0.04);
+    color: #000;
+}
+
+
+/* 
+    MAT-DIALOG 
+ */
+.znDialog {
+    width: 80vw;
+    height: 90vh;
+    max-height: 900px;
+}
+
+.znDialog .mat-dialog-content {
+    max-height: 100%;
+}
+
+.znDialog .mat-dialog-content .mat-tab-group {
+    height: 100%;
+}
+
+.znDialog .mat-dialog-content .mat-tab-group .mat-tab-body-wrapper {
+    padding-top: 1em;
+    flex: 1;
+}
+
+@media (max-width: 599px) { 
+    .znDialog {
+        height: 100%;
+        width: 100%;
+    }
+}

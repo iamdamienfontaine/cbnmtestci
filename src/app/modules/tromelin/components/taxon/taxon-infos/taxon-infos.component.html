@@ -1,0 +1,187 @@
+
+<div fxLayout="column" style="height: 100%">
+
+  <h2 mat-dialog-title color="accent">
+
+    {{data.nom_botanique}}
+
+    <span fxFlex></span>
+
+    <button mat-button [mat-dialog-close]="true">
+      <mat-icon class="material-icons">close</mat-icon>
+    </button>
+
+  </h2>
+  
+  <div>
+      <span class="alert alert-{{data.etat_class}}">
+        {{data.etat_label}}
+      </span>
+  </div>
+  
+  <mat-dialog-content fxFlex>
+
+      <mat-tab-group>
+
+        <mat-tab label="Etat intial">
+
+          <div class="item-container">Eradication initiale : 
+            <div class="item-badge"> {{data.eradication_initiale}} </div>
+          </div>
+
+
+          <div class="item-container"> Nombre total de stations : 
+            <div class="item-badge"> {{data.nb_init_stations}} </div>
+          </div>
+          
+
+          <div class="item-container"> Nombre total d'individus : 
+            <div class="item-badge"> {{data.nb_init_ind}} </div>
+          </div>
+
+          <div class="item-container"> Surface initiale (m²) :
+            <div class="item-badge"> {{data.surf_init}} </div>
+          </div>
+
+        </mat-tab>
+
+
+        <mat-tab label="Actions">
+
+          <app-taxon-actions [taxonId]="data.id"></app-taxon-actions>
+
+        </mat-tab>
+
+        
+        <mat-tab label="Bilans">
+
+            <div style="height: 100%; overflow-x: hidden; overflow-y: auto">
+
+              <div fxLayout="row" fxLayout.lt-sm="column">
+
+                <div fxFlex>
+
+                  <h4 color="accent">Bilan global</h4>
+                  <div class="item-container">Nombre total d'actions :
+                    <div class="item-badge"> {{data.nb_global_tot}} </div>
+                  </div>
+
+                  <div class="item-container">Nombre total de personnes mobilisés : 
+                    <div class="item-badge"> {{data.nb_agent_tot}} </div>
+                  </div>
+
+                  <div class="item-container">Durée totale cumulées (h): 
+                    <div class="item-badge"> {{data.nb_h_tot}} </div>
+                  </div>
+
+                  <div class="item-container">Durée totale cumulée x nombre de personnes (h): 
+                    <div class="item-badge"> {{ data.nb_h_nb_agent_tot }}</div>
+                  </div>
+
+                  <div class="item-container" *ngIf="data.id == 4">Nombre total d'inflorescences/infrutescences : 
+                    <div class="item-badge"> {{ data.nb_fleur_fruit }}</div>
+                  </div>
+        
+                  <div class="item-container" *ngIf="data.id == 5">Nombre total de drageons traités :
+                    <div class="item-badge"> {{ data.nb_drageon }} </div>
+                  </div>
+        
+                  <div class="item-container"  *ngIf="data.id == 6">Nombre total de boutures traitées : 
+                    <div class="item-badge"> {{ data.nb_bouture }} </div>
+                  </div>
+
+                  <div class="item-container" *ngIf="[4,7,11,10].indexOf(data.id) !== -1">Nombre total de plantules traitées :
+                    <div class="item-badge"> {{ data.nb_plantule }} </div>
+                  </div>
+        
+                  <div class="item-container" *ngIf="[4,5,6,7,11].indexOf(data.id) !== -1">Nombre total de juvéniles traités :
+                    <div class="item-badge"> {{ data.nb_juvenile }} </div>
+                  </div>
+        
+                  <div class="item-container" *ngIf="[4,5,6,7,10,11].indexOf(data.id) !== -1"> Nombre total d'adultes traités :
+                    <div class="item-badge"> {{ data.nb_adulte }} </div>
+                  </div>
+
+                  <div class="item-container"> Nombre total d'individus traités :
+                    <div class="item-badge"> {{ data.nb_ind_tot }} </div>
+                  </div>
+
+                </div>
+
+                <div fxFlex>
+
+                  <h4 color="accent">Actions de lutte</h4>
+                  <div class="item-container">Nombre total d'actions de lutte :
+                    <div class="item-badge"> {{data.nb_lutte_tot}} </div>
+                  </div>
+        
+                  <div class="item-container">Nombre total de personnes mobilisées :
+                    <div class="item-badge"> {{data.nb_agents_lutte}} </div>
+                  </div>
+
+                  <div class="item-container">Durée totale cumulée (h) :
+                    <div class="item-badge"> {{data.nb_h_lutte}} </div>
+                  </div>
+        
+                  <div class="item-container">Durée totale cumulée x nombre de personnes mobilisées (h) :
+                    <div class="item-badge"> {{data.nb_h_nb_agent_lutte}} </div>
+                  </div>
+        
+                  <div class="item-label"> Eradication initiale : </div>
+                  <div class="item-value"> {{data.eradication_initiale}} </div>
+
+                  <div class="item-label"> Besoin de lutter à nouveau : </div>
+                  <div class="item-value"> {{data.besoin_lutte}} </div>
+
+
+                  <h4 color="accent">Actions de suivi</h4>
+                  <div class="item-container">Nombre total d'actions de suivi :
+                    <div class="item-badge"> {{data.nb_suivi_tot}} </div>
+                  </div>
+          
+                  <div class="item-container">Nombre total de personnes mobilisées :
+                    <div class="item-badge"> {{data.nb_agents_suivi}} </div>
+                  </div>
+
+                  <div class="item-container">Durée totale cumulée (h) :
+                    <div class="item-badge"> {{data.nb_h_suivi}} </div>
+                  </div>
+        
+                  <div class="item-container">Durée totale cumulée x nombre de personnes mobilisées (h) :
+                    <div class="item-badge"> {{data.nb_h_nb_agent_suivi}} </div>
+                  </div>
+
+                  <div class="item-label"> Besoin de suivre à nouveau : </div>
+                  <div class="item-value"> {{data.besoin_lutte}} </div>
+
+
+                  <h4 color="accent">Actions de traitement des déchets verts</h4>
+                  <div class="item-container">Nombre total d'actions de traitement :
+                    <div class="item-badge"> {{data.nb_dechets_tot}} </div>
+                  </div>
+        
+                  <div class="item-container">Nombre total de personnes mobilisées :
+                    <div class="item-badge"> {{data.nb_agents_dechets}} </div>
+                  </div>
+
+                  <div class="item-container">Durée totale cumulée (h) :
+                    <div class="item-badge"> {{data.nb_h_dechets}} </div>
+                  </div>
+        
+                  <div class="item-label"> Durée totale cumulée x nombre de personnes mobilisées (h) :
+                    <div class="item-badge"> {{data.nb_h_nb_agent_dechets}} </div>
+                  </div>
+        
+                </div>
+
+              </div>
+    
+            </div>
+
+        </mat-tab>
+
+      </mat-tab-group>
+
+  </mat-dialog-content>
+
+</div>

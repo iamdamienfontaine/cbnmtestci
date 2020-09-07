@@ -1,0 +1,103 @@
+<div style="margin: 1em; padding:0.5em" class="mat-elevation-z1">
+    <div style="text-align: center">
+        <button mat-stroked-button (click)="close()">
+            FERMER
+        </button>
+    </div>
+    <br/>
+    <div fxLayout="row" fxLayout.lt-sm="column" class="overflow">
+
+        <div fxFlex>
+
+            <div class="item-label"> Date : </div>
+            <div class="item-value"> {{data.item.action_date}} </div> 
+            
+            <div class="item-label"> Acteur : </div>
+            <div class="item-value"> {{data.item.action_acteur}} </div> 
+            
+            <div class="item-label"> Chef d'équipe : </div> 
+            <div class="item-value"> {{data.item.action_identite}}</div> 
+            
+            <div *ngIf="data.item.taxon_id == 1 || data.item.taxon_id == 2">
+                <div class="item-label"> Autres personnes : </div>
+                <div class="item-value"> {{data.item.action_acteur_autre}} </div> 
+            </div>
+
+            <div class="item-container">
+                    Nombre de personnes :
+                <span class="item-badge"> {{data.item.action_nb_personne}} </span>
+            </div>
+
+            <div *ngIf="data.item.taxon_id == 1 || data.item.taxon_id == 2">
+                <div class="item-container"> 
+                    Durée de l'action (min) : 
+                    <span class="item-badge">{{data.item.action_h_tot_min}}</span> 
+                </div> 
+            </div>
+            
+            <div class="item-container"> 
+                Surface traitée (m²) :
+                <span class="item-badge">{{data.item.action_surf_traitee}}</span> 
+            </div>
+            
+            <div *ngIf="data.item.taxon_id == 1 || data.item.taxon_id == 2">
+
+                <div class="item-container"> 
+                    Nombre d'individus arrachés :
+                    <span class="item-badge">{{data.item.action_nbarrache}}</span> 
+                </div> 
+                
+                <div class="item-container"> 
+                    Nombre de mâts coupés :
+                    <span class="item-badge">{{data.item.action_nbcoupe}}</span> 
+                </div> 
+                
+                <div class="item-container"> 
+                    Poids de bulbilles collectées (kg) :
+                    <span class="item-badge">{{data.item.action_pds}}</span> 
+                </div> 
+
+            </div>
+            
+        </div> 
+            
+            
+        <div fxFlex>
+            
+            <div *ngIf="data.item.taxon_id == 3">
+            
+                <div class="item-label"> Phénologie : </div>
+                <div class="item-value"> 
+                    <ul>  
+                        <li *ngFor="let stade of data.item.action_stadeveg">{{stade}}</li> 
+                    </ul>
+                </div> 
+
+            </div>
+            
+
+            <div class="item-label"> Stade(s) biologique(s) traité(s) : </div>
+            <div class="item-value"> 
+                <ul>  
+                    <li *ngFor="let stade of data.item.action_stade_traitee">{{stade}}</li> 
+                </ul>
+            </div> 
+            
+                                    
+            <div class="item-label"> Méthode(s) de lutte appliquée(s) : </div>
+            <div class="item-value">
+                <ul>  
+                    <li *ngFor="let stade of data.item.action_methode">{{stade}}</li> 
+                </ul> 
+            </div> 
+            
+            <div class="item-label"> Outil(s) utilisé(s) :</div>
+            <div class="item-value"> 
+                <ul>  
+                    <li *ngFor="let stade of data.item.action_outils">{{stade}}</li> 
+                </ul> 
+            </div> 
+        </div> 
+
+    </div>
+</div>

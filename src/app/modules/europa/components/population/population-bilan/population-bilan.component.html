@@ -1,0 +1,126 @@
+<div fxFlex>
+
+    <h4 color="accent">Actions de lutte</h4>        
+    
+    <div class="item-container">
+        Nombre total d’actions de lutte :
+        <div class="item-badge"> {{bilan.actions.ct_actions}} </div>
+    </div>
+    
+    <div class="item-container">
+        Nombre total de personnes mobilisées :
+        <div class="item-badge"> {{bilan.actions.ct_nb_ident}} </div>
+    </div>
+
+    <div *ngIf="population.pop_taxon_id == 1 || population.pop_taxon_id == 2">
+        <div class="item-container">
+            Durée cumulée (h) :
+            <div class="item-badge"> {{bilan.actions.ct_h_tot | number:'1.0-2'}} </div> 
+        </div>
+    </div>  
+
+    <div class="item-container" *ngIf="population.pop_taxon_id == 1 || population.pop_taxon_id == 2">
+        Surface totale traitée (m²) :
+        <div class="item-badge"> {{population.pop_lutte_surf}} </div>
+    </div>  
+
+    <div *ngIf="population.pop_taxon_id == 1 || population.pop_taxon_id == 2">
+        
+        <div class="item-container">
+            Nombre total d’individus arrachés :
+            <div class="item-badge"> {{bilan.actions.ct_nb_arrache}}</div>
+        </div>
+            
+        <div class="item-container">
+            Nombre total de mâts coupés :
+            <div class="item-badge"> {{bilan.actions.ct_mat_coupe}}</div>
+        </div>
+                        
+        <div class="item-container">
+            Poids total de bulbilles collectées (kg) :
+            <div class="item-badge"> {{bilan.actions.ct_pds_bulbe}}</div>
+        </div>
+    </div>
+
+    
+    <div class="item-label"  > Date de fin de la lutte : </div>
+    <div class="item-value"> {{bilan.actions.date_action_max}} </div>
+
+    <div *ngIf="population.pop_taxon_id == 3"> 
+
+        <div class="item-label"> Éradication initiale :</div> 
+        <div class="item-value"> {{population.json?.eradication_initiale}} </div>
+
+    </div> 
+
+    <div class="item-label"> Besoin de traiter à nouveau : </div>
+    <div class="item-value"> {{population.pop_lutte_new}} </div>
+
+
+    
+
+
+</div>
+
+        
+<div fxFlex>   
+    <h4 color="accent">Actions de suivi</h4>
+    
+    
+    <div class="item-container">
+        Nombre total d’actions de suivi :
+        <div class="item-badge"> {{bilan.suivis.ct_suivis}}</div>
+    </div>
+
+    <div class="item-container">
+        Nombre total de personnes mobilisées :
+        <div class="item-badge"> {{bilan.suivis.ct_nb_ident}}</div>
+    </div>
+
+     
+
+    <div class="item-container" *ngIf="population.pop_taxon_id == 3">
+        Surface totale suivie (m²) :
+        <div class="item-badge"> {{population.pop_suivi_surf}} </div>
+    </div>  
+
+    <div class="item-container">
+        Temps de suivi (mois) : 
+        <div class="item-badge"> {{population.pop_suivi_mois | number:'1.0-2'}}</div>
+    </div> 
+    
+    <div *ngIf="population.pop_taxon_id == 1 || population.pop_taxon_id == 2">
+        <div class="item-container">
+            Nombre total d’individus arrachés :
+            <div class="item-badge"> {{bilan.suivis.ct_nb_arrache}}</div>
+        </div> 
+
+        <div class="item-container">
+            Poids total de bulbilles collectées (kg) :
+            <div class="item-badge"> {{bilan.suivis.ct_pds_bulbe}}</div>
+        </div>  
+
+        <div class="item-container">
+            Nombre total de bulbilles collectées :
+            <div class="item-badge"> {{population.json.nb_tot_bulb}}</div>
+        </div> 
+
+        <div class="item-label"> Dynamique de la régénération naturelle : </div>
+        <div class="item-value"> {{population.json.pop_suivi_dynreg}} </div>        
+
+    </div>
+
+    <div class="item-label"> Date du dernier suivi : </div> 
+    <div class="item-value"> {{bilan.suivis.date_suivi_max}}</div>
+
+    <div class="item-label"> Besoin de suivre à nouveau : </div>
+    <div class="item-value"> {{population.pop_suivi_new}} </div>  
+
+    <div *ngIf="population.pop_suivi_new == 'Oui'">
+        <div class="item-label" > Prochain suivi : </div>
+        <div class="item-value"> {{population.json?.periode_prochain_suivi}}</div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,111 @@
+
+<div fxLayout="column" style="height: 100%">
+
+  <h2 mat-dialog-title color="accent">
+
+    <span fxFlex>Programmes de lutte contre les espèces végétales exotiques envahissantes sur l’île Europa</span>
+
+    <button mat-button [mat-dialog-close]="true">
+      <mat-icon class="material-icons">close</mat-icon>
+    </button>
+
+  </h2>
+  
+  <mat-dialog-content fxFlex>
+      <div fxLayout="row wrap" fxHide.lt-md="true" class="icono-rowrap">
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: left;max-width: 120px" src="assets/images/articles/furfoe-EUROPA-avril2011-JH1_600.JPG"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: left;max-width: 120px" src="assets/images/articles/agasis-EUROPA-avril2011-JH4_600.JPG"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/uromax-EUROPA-20160522-JH01_600.JPG"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Casequ_Eur.jpg"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Cenech_Eur.jpg"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Cocnuc_Eur.jpg"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Morole_Eur.jpg"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Riccom_Eur.jpg"/></div>
+        <div fxFlex style="text-align:center"><img  class="img-thumbnail"style="vertical-align: middle;max-width: 120px" src="assets/images/articles/Tamind_Eur.jpg"/></div>
+      </div>
+
+
+      <p align="justify">
+        Sur l’île Europa (30 km2), les programmes de lutte concernent neuf espèces végétales exotiques envahissantes : 
+        le Cenchre épineux (<i>Cenchrus echinatus</i>), la Fataque (<i>Urochloa maxima</i>), le Choca (<i>Furcraea foetida</i>), le Sisal (<i>Agave sisalana</i>), le Ricin (<i>Ricinus communis</i>), le Filao (<i>Casuarina equisetifolia</i>), le Tamarin (<i>Tamarindus indica</i>), le Morongue (<i>Moringa oleifera</i>) et le Cocotier (<i>Cocos nucifera</i>). À ce jour, seules les actions entreprises contre le Choca, le Sisal et la Fataque sont présentées sur ce site WEB (compléments envisagés courant 2021)
+      </p>
+  
+      <p align="justify">
+          Conçu sous la forme d’une interface cartographique, ce site permet de connaitre la localisation des populations d’EEE, de consulter en détail 
+          les diverses actions (lutte ou suivi) menées contre les EEE et de dresser des bilans (à l’échelle de chaque population ou à l’échelle de chaque EEE). 
+          Ces données sont régulièrement actualisées et complétées au gré des actions menées in situ.
+      </p>
+  
+      <h2 color="accent">Règles de fonctionnement</h2>
+
+      <h3 color="accent"> Bandeau 'Populations' </h3>
+
+      <ul>
+        <li>
+          <p align="justify">
+            Cliquer sur l’icône <mat-icon class="material-icons mat-icon-translate">chrome_reader_mode</mat-icon> (en haut à gauche sur les terminaux mobiles) afin de faire apparaitre le bandeau ‘Populations’.
+          </p>
+        </li>
+        <li>
+          <p align="justify">
+            Cliquer sur le bouton <button mat-stroked-button color="primary">Bilan global</button> 
+            afin de consulter le bilan global des actions de lutte et de suivi menées sur chaque taxon. 
+            <br/>
+            Sélectionner le sous-onglet correspondant au taxon recherché : ‘<i>Furcraea foetida</i> (Choca)’ ou ‘<i>Agave sisalana</i> (Sisal)’ ou ‘<i>Urochloa maxima</i> (Fataque)’.
+          </p>
+        </li>
+        <li>
+          <p align="justify">
+            Sélectionner le taxon dont les populations doivent être affichées sur la carte au niveau du menu déroulant du bandeau ‘Populations’ :  
+            <i>‘Furcraea foetida</i> - Choca’ ou ‘<i>Agave sisalana</i> - Sisal’ ou ‘<i>Urochloa maxima</i> - Fataque’.
+            <br/>
+            Les populations apparaissent sur la carte (Cf. ‘Carte') ainsi que la liste des populations (n° de population ; état de la lutte ; 
+            nombre total d’actions de lutte / de suivi).
+          </p>
+        </li>
+        <li>
+          <p align="justify">
+            Cliquer sur le n° de population souhaité (ou sur la population affichée sur la carte) pour faire apparaitre une nouvelle fenêtre d’affichage 
+            des informations associées à la population sélectionnée.
+            <br/>
+            Sélectionner le sous-onglet correspondant aux informations recherchées : ’Etat initial’ ou ‘Actions de lutte/suivi’ ou ‘Bilan des actions’.
+            <br/>
+            Dans le cas du sous-onglet ‘Actions de lutte/suivi’, il faut d’abord choisir le type d’action (‘Lutte’ ou ‘Suivi’) dans le menu déroulant, 
+            puis cliquer sur une date (classement par ordre chronologique décroissant) afin d’obtenir toutes les informations relatives à l’action sélectionnée.
+          </p>
+        </li>
+      </ul>
+
+
+      <h3 color="accent"> Carte </h3>
+
+      <ul>
+
+        <li>
+          <p align="justify">
+            La carte affiche les populations de l’EEE sélectionnée au niveau du menu déroulant du bandeau ‘Populations’. 
+            Il y a possibilité de se déplacer sur la carte, de zoomer ou dézoomer.
+          </p>
+        </li>
+        <li>
+          <p align="justify">
+            Cliquer sur l’icône <mat-icon class="material-icons mat-icon-translate">layers</mat-icon> pour faire apparaitre les légendes.
+          </p>
+        </li>
+        <li>
+          <p align="justify">
+            Cliquer sur une population affichée sur la carte (ou sur le n° de population au niveau du bandeau ‘Populations’) 
+            pour faire apparaitre une nouvelle fenêtre d’affichage des informations associées à la population sélectionnée.
+            <br/>
+            Sélectionner le sous-onglet correspondant aux informations recherchées : ’Etat initial’ ou ‘Actions de lutte/suivi’ ou ‘Bilan des actions’.
+            <br/>
+            Dans le cas du sous-onglet ‘Actions de lutte/suivi’, il faut d’abord choisir le type d’action (‘Lutte’ ou ‘Suivi’) dans le menu déroulant, 
+            puis cliquer sur une date (classement par ordre chronologique décroissant) afin d’obtenir toutes les informations relatives à l’action sélectionnée.
+          </p>
+        </li>
+        
+      </ul>
+
+  </mat-dialog-content>
+
+</div>

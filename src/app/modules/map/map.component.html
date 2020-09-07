@@ -1,0 +1,25 @@
+
+<button mat-raised-button class="sidenavToggle"
+        (click)="sidenavToggle()">
+        <mat-icon class="material-icons">chrome_reader_mode</mat-icon>
+</button>
+
+<div class="zoomButtons" fxLayout="column">
+
+    <button mat-icon-button class="sidenavEndToggle"
+            (click)="sidenavEndToggle()">
+        <mat-icon class="material-icons">layers</mat-icon>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-icon-button
+            (click)="zoom('in')">
+        <mat-icon class="material-icons">add</mat-icon>
+    </button>
+
+    <button mat-icon-button
+            (click)="zoom('out')">
+        <mat-icon class="material-icons">remove</mat-icon>
+    </button>
+</div>
+
+<div [id]="'openlayers-map-' + ileId"></div>

@@ -1,0 +1,94 @@
+<app-map [ileId]="data.ui.ileId"></app-map>
+
+
+<mat-sidenav-container class="app-sidenav-container" >
+    
+  <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [(opened)]="data.ui.sidenavOpened" fxLayout="column" class="mat-elevation-z2"
+                        (closed)="sidenavClosed()">            
+               
+      <populations-list fxFlex fxLayout="column" [sidenav]="sidenav"></populations-list>
+
+  </mat-sidenav>
+  
+
+  <mat-sidenav #sidenavend mode="side" position="end" [(opened)]="data.ui.sidenavendOpened" (closed)="sidenavendClosed()">
+        <mat-toolbar>
+            <span>Légende</span>
+            <span fxFlex></span>
+            <button mat-icon-button (click)="sidenavend.toggle()">
+                <mat-icon class="material-icons">close</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <div style="padding: 0.5em; overflow: auto;" fxLayout="column">
+               
+            <mat-list dense fxFlex>
+
+                <mat-list-item>Choca</mat-list-item>
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--choca legend-icon--choca-1"></div>
+                    Aucune action de lutte réalisée
+                </mat-list-item>
+                
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--choca legend-icon--choca-2"></div> 
+                    Actions de lutte débutées mais insuffisantes 
+                </mat-list-item>
+
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--choca legend-icon--choca-3"></div> 
+                    Actions de lutte terminées, actions de suivi en cours ou terminées 
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Sisal</mat-list-item>
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--sisal legend-icon--sisal-1"></div>
+                    Aucune action de lutte réalisée
+                </mat-list-item>
+                
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--sisal legend-icon--sisal-2"></div> 
+                    Actions de lutte débutées mais insuffisantes 
+                </mat-list-item>
+
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--sisal legend-icon--sisal-3"></div> 
+                    Actions de lutte terminées, actions de suivi en cours ou terminées 
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Fataque</mat-list-item>
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--fataque legend-icon--fataque-1"></div>
+                    Aucune action de lutte réalisée
+                </mat-list-item>
+                
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--fataque legend-icon--fataque-2"></div> 
+                    Actions de lutte débutées mais insuffisantes 
+                </mat-list-item>
+
+                <mat-list-item> 
+                    <div class="legend-icon legend-icon--fataque legend-icon--fataque-3"></div> 
+                    Actions de lutte terminées, actions de suivi en cours ou terminées 
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+                <mat-list-item></mat-list-item>
+                <mat-list-item> 
+                        <div class="legend-icon legend-icon--icon"><mat-icon class="material-icons">star</mat-icon></div>
+                    Population en cours de lutte
+                </mat-list-item>
+
+            </mat-list>
+                     
+        </div>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content></mat-sidenav-content>
+  
+</mat-sidenav-container>

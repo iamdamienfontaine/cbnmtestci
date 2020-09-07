@@ -1,0 +1,7 @@
+:host {
+    position: relative;
+}
+
+:host .mat-icon.mat-icon-translate{
+    transform: translateY(6px);
+}
