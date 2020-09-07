@@ -31,7 +31,7 @@ jobs:
         run: |
           npm install
           npm run build
-          ls dist/cbnmtestci
+          ls dist
           mkdir ~/.ssh
           echo "$remote_key" > ~/.ssh/gh_actions_key
           chmod 600 ~/.ssh/gh_actions_key
