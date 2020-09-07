@@ -15,7 +15,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.DEPLOY_KEY }}
+          key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.PORT }}
           script: bash scripts/script-ng-eee-ie.sh
           
