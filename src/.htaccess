@@ -2,8 +2,8 @@
   Options Indexes FollowSymLinks
   RewriteEngine On
   RewriteBase /lutte_eee/
-  RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
 </IfModule>
