@@ -13,11 +13,11 @@ jobs:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: "51.75.99.223"
+          username: "webdev"
           password: ${{ secrets.DEPLOY_KEY }}
-          port: ${{ secrets.PORT }}
-          script: bash scripts/script-ng-eee-ie.sh
+          port: "6789"
+          script: cat /.ssh/id_rsa.pub
           
       - uses: actions/checkout@v1
       - name: npm install and build webpack
