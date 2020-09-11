@@ -24,7 +24,7 @@ jobs:
         env:
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_port: ${{ secrets.DEPLOY_PORT }}
-          remote_user: ${{ secrets.DEPLOY_KEY }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
           remote_key: ${{ secrets.DEPLOY_KEY }}
           local_dir: "dist/ng-eee-ie/"
           remote_dir: "/var/www/html/ie/lutte_eee/"
