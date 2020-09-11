@@ -15,7 +15,7 @@ jobs:
         with:
           host: "51.75.99.223"
           username: "webdev"
-          password: ${{ secrets.DEPLOY_KEY }}
+          key: ${{ secrets.DEPLOY_KEY }}
           port: "6789"
           script: cat /.ssh/id_rsa.pub
           
